@@ -1,0 +1,68 @@
+{% extends "navebar/base.html" %}
+{% load static %}
+{% block title %}
+ profil page
+
+{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/ss.css' %}">
+<br><br>
+<h3>profile</h3>
+<dvi>
+ <style>
+    div {text-align: center;}
+
+
+
+    .button {
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: auto;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+table, th, td {
+   margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+
+
+<table>
+ <tr>
+
+  <th>name</th>
+  <td>{{user.username}}</td>
+
+ </tr>
+
+
+<tr>
+
+  <th>address</th>
+  <td>{{user.profile.address}}</td>
+
+ </tr>
+
+<tr>
+
+  <th>mobile no</th>
+  <td>{{user.profile.number}}</td>
+
+ </tr>
+</dvi>
+
+<div>
+ <img class="profileimage" src="{{user.profile.image.url}}" width="100" height="60">
+<button><a href="{% url "editprofile"  %}">edit</a></button>
+
+</div>
+ {% endblock  %}

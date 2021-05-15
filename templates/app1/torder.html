@@ -1,0 +1,28 @@
+{% extends "navebar/base.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}    home page     {% endblock %}</title>
+
+  </head>
+  <body> {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/ss.css' %}">
+  <form method="POST">
+          {% if user.is_authenticated %}
+  <div class="torder">           {% csrf_token  %}
+            {% load crispy_forms_tags %}
+
+          {{  form.as_p }}
+
+  <input type="submit" value="save">
+      </div></form>
+             {% else  %}
+  <div>
+  <h3> login as a staff to order product </h3>
+</div>
+  {% endif %}
+  {% endblock %}
+  </body>
+</html>

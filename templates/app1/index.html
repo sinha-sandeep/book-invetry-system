@@ -1,0 +1,26 @@
+{% extends "navebar/base.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}    home page     {% endblock %}</title>
+  </head>
+  <body>
+
+
+
+          {% block content %}<br><nr></nr>
+
+          <link rel="stylesheet" type="text/css" href="{% static 'css/ss.css' %}">
+          <br><br><br>
+<div style="text-align:center">
+    <h2>welcome to book Inventory </h2>
+    <h3>number of product={{product_count}}</h3>
+    <h3>number of order={{order_count}}</h3>
+    <h3>number of staff={{staff_count}}</h3>
+
+     </div>
+                 {% endblock %}
+  </body>
+</html>

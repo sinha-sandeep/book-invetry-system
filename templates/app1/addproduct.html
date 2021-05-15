@@ -1,0 +1,53 @@
+{% extends "navebar/base.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}    home page     {% endblock %}</title>
+  </head>
+  <body>
+  {% load crispy_forms_tags %}
+    {% block content %}
+
+    <style>
+    div {text-align: center;}
+
+
+
+    .button {
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: auto;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+table, th, td {
+   margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+  <br> <br><br>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/ss.css' %}">
+  <h3>add product</h3>
+  <div style="width:800px; margin:0 auto;">
+      <form method="POST">
+          {% csrf_token %}
+             {{ form|crispy }}
+
+       <input class="btn btn-sucess" type="submit" value="save">
+
+      </form>
+
+                 </div>
+  {% endblock %}
+
+  </body>
+</html>

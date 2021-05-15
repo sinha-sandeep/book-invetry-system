@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+{%  include "navebar/nav.html" %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}         {% endblock %}</title>
+  </head>
+  <body>
+
+
+      <ul>
+        <li><a  href= "{% url  "user-staff" %}" >staff</a></li>
+        <li><a href="{% url  "product_page" %}">products</a></li>
+        <li><a href="{% url  "order_page" %}">orders</a></li>
+
+    </div>
+          <div >
+     {% block content %}
+
+
+
+     {% endblock %}
+          </div>
+  </body>
+</html>

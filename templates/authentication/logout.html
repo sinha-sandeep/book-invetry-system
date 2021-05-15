@@ -1,0 +1,24 @@
+{% extends "navebar/base.html" %}
+{% load static %}
+
+{% block title %}
+logout page
+
+{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/ss.css' %}">
+     <div class="contener">
+                     <h3>logout page</h3>
+
+
+             <hr>
+         <h3>you have been logout</h3>
+         <h3> for login <a href="{% url "user-login" %}" > click here     </a></h3>
+
+
+                  </div>
+
+
+
+    {% endblock %}

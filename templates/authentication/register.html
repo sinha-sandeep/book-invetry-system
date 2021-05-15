@@ -1,0 +1,36 @@
+{% extends "navebar/base.html" %}
+{% load static %}
+
+{% block title %}
+register page
+
+{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/ss.css' %}">
+
+ <h3>register</h3>
+             <hr>
+
+
+
+         <div class="center" >
+
+             <form  method="POST">
+
+             {% csrf_token %}
+             {{form|crispy}}
+              {{form1|crispy}}
+              <input class="btn btn-success" type="submit" value="register">
+         </div>
+
+
+         </form>
+
+
+     </div>
+
+
+
+    {% endblock %}
